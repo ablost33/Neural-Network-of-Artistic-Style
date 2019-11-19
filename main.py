@@ -8,15 +8,15 @@ from utils import *
 dtype = torch.cuda.FloatTensor if torch.cuda.is_available() else torch.FloatTensor
 
 # Content and style
-style = image_loader("styles/knife_landscape.jpg").type(dtype)
-content = image_loader("content/images.jpeg").type(dtype)
+style = image_loader("styles/style1.jpg").type(dtype)
+content = image_loader("content/montreal.jpg").type(dtype)
 
 # pastiche.data = torch.randn(input.data.size()).type(dtype)
 
 num_epochs = 31
 
 def main():
-	pastiche = image_loader("content/images.jpeg").type(dtype)
+	pastiche = image_loader("content/montreal.jpg").type(dtype)
 	style_cnn = StyleCNN(style, content, pastiche)
     
 	for i in range(num_epochs):

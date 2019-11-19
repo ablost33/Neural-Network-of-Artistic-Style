@@ -6,7 +6,7 @@ import scipy.misc
 import imageio
 
 
-imsize = 256
+imsize = 1080
 
 loader = transforms.Compose([
              transforms.Resize(imsize),
